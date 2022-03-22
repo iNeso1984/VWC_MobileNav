@@ -4,105 +4,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>Vets Who Code</title>
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="hamburger.css">
+    <title>Hamburger</title>
 </head>
+
 <body>
-    <header>
-    <nav class="main-nav">
-    
-       
-       
-        <ul id="main-li">
-            <div class="logo">
-                <img src="https://res.cloudinary.com/vetswhocode/image/upload/v1609084190/hashflag-white-vscode_n5k5db.jpg" alt=""
-                    srcset="">
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo"><img src="https://res.cloudinary.com/vetswhocode/image/upload/v1609084190/hashflag-white-vscode_n5k5db.jpg" alt="logo"></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Our Story &#x25BC;</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#" class="nav-link">ABOUT</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link">BOARD</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link">TESTIMONIALS</a>
+                            </li>
+                        </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Media &#x25BC;</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#" class="nav-link">BLOG</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link">PODCAST</a>
+                            </li>
+                        </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Apply &#x25BC;</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#" class="nav-link">VETERAN</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link">MENTOR</a>
+                            </li>
+                        </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Syllabus</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Job Search</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Code of Conduct</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><button class="donate">Donate</button></a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-    
-   
-            <li class="main-li" ><a href="#">HOME</a></li>
-    
-            <li class="main-li"><a href="#">OUR STORY</a>
-                <span class="arrow">&#x25BC;</span>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="#">ABOUT</a>
-                    </li>
-                    <li>
-                        <a href="#">BOARD</a>
-                    </li>
-                    <li>
-                        <a href="#">TESTIMONIALS</a>
-                    </li>
-                </ul>
-            </li>
-    
-    
-    
-            <li  class="main-li"><a href="#">MEDIA</a>
-                <span class="arrow">&#x25BC;</span>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="#">BLOG</a>
-                    </li>
-                    <li>
-                        <a href="#">PODCAST</a>
-                    </li>
-                </ul>
-            </li>
-    
-    
-            <li  class="main-li"><a href="#">APPLY</a>
-                <span class="arrow">&#x25BC;
-                <ul class="sub-menu">
-                    <li>
-                        <a href="#">VETERAN</a>
-                    </li>
-                    <li>
-                        <a href="#">MENTOR</a>
-                    </li>
-                </ul>
-                </span>
-            </li>
-            
-
-            <li  class="main-li"><a href="#">SYLLABUS</a></li>
-            <li  class="main-li"><a href="#">JOB SEARCH</a></li>
-            <li  class="main-li"><a href="#">CONTACT</a></li>
-            <li  class="main-li"><a href="#">CODE OF CONDUCT</a></li>
-            <button class="donate"><a href ="#">DONATE</a></button>
-           
-        </ul>
-       
-    <div class="menu" id="toggle">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-
-
-    </div>
-    
-    </nav>
+        </nav>
     </header>
+<script>
+    const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
 
+        hamburger.addEventListener("click", mobileMenu);
 
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+        const navLink = document.querySelectorAll(".nav-link");
 
-    <script>
-    //   const toggle= document.getElementById("toggle");
-    //   const mainNavList=document.getElementById("main-li");
+navLink.forEach(n => n.addEventListener("click", closeMenu));
 
-    //   const toggleClick=toggle.addEventListener('click',()=>{
-    //       console.log("clicked")
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
 
-    //       mainNavList.style.display="block";
-    //     mainNavList.classList.toggle('active');
-    //   })
-    // document.getElementById('target').style.color = 'tomato';
-
-    </script>
+//submenu
     
+    
+
+
+
+
+    
+
+</script>
 </body>
 </html>
