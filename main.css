@@ -1,3 +1,4 @@
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -17,19 +18,19 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video 
 {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 
 }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 :root {
   --hashflag-red: #C5203E;
@@ -39,112 +40,139 @@ footer, header, hgroup, menu, nav, section {
 
 }
 body{
-    font-family: Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif sans-serif;
     
 }
-
-
-
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-.main-nav{
-    background-color: var(--hashflag-blue);
-    color:var(--hashflag-white);
-    display:flex;
-    padding-top: 50px;
-    justify-content: space-around;
-   
-    /* height:50px; */
-
-}
-ul li{
-    list-style: none;
-    display:inline-block;
-    padding: 20px 10px;
-    
-   
-}
-
-
-nav ul li a{
-text-transform: capitalize ;
-color: var(--hashflag-white);
-font-size: 17px;
-
-text-decoration: none;
-}
-.logo>img {
+.nav-logo>img {
   background-color: var(--hashflag-white);
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  float:left; 
-  margin-top: 30px;
  
-     
 }
-.main-nav a:hover {
-  text-decoration: underline;
 
+blockquote, q {
+  quotes: none;
 }
-.menu{
-   display: none;
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
 }
-.line{
-    width: 30px;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+li {
+    list-style: none;
+    
+}
+
+a {
+    text-decoration: none;
+}
+a.nav-link{
+     color:var(--hashflag-white);
+     text-transform: uppercase;
+}
+.header{
+    border-bottom: 1px solid #E2E8F0;
+    background-color: var(--hashflag-blue);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
     height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     background-color: var(--hashflag-white);
-    margin-bottom: 5px;
     border-radius: 20px;
 }
-.donate{
- display: block;
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
 }
-
 .sub-menu{
-  display: none;
+    display:none;
+   
 }
-.main-li:hover .sub-menu{display:block;}
-div#toggle.menu:hover .main-li{display: block;}
 
-/* .dropdown:hover .dropdown-content {display: block;} */
-
-@media all and (max-width: 768px){
-
-
-.navbar{
-    flex-direction: column;
-    position: relative;
+.nav-item {
+    margin-left: 1rem;
+    margin-right: 20px;
+    overflow: hidden;
 }
-.menu{
-    display:block;
-    position:absolute;
-    right:15px;
-    top:20px;
-}
-.main-nav ul li{
-    list-style-type: none;
-    width: 100%;
-    text-align: center;
-    padding-top:10px;
-     
-
-    
+button.donate{
+    margin: 0 1;
+    padding:20px 15px;
+    background-color: #203ec5d2;
+    border-radius: 10px;
+     text-decoration: none;
+     color:var(--hashflag-white);
 
 }
-.logo>img {
-  background-color: var(--hashflag-white);
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 200;
+    color: #475569;
+}
+
+.nav-link:hover {
+text-decoration: underline;
+  transition: 2s;
+  display: block;
+  
+
+}
+.displayStyle {display:block;}
+.nav-link:hover .sub-menu{display:block;}
+
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: var(--hashflag-blue);
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+a.nav-logo{
+ 
+ 
+ 
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -154,21 +182,4 @@ div#toggle.menu:hover .main-li{display: block;}
      
 }
 
-.main-li{
-     border-bottom: 1px solid rgba(255, 255, 255, 0.363);
-     
-  
 }
-
-
-.dark-mode{
-  display: none;
-}
-
-.active:hover{
-  display:block;
-}
-
-
-}
-
